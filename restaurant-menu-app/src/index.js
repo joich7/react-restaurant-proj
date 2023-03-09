@@ -1,11 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.css";
+import Menu from "./components/Menu";
+import Home from "./components/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  //<React.StrictMode>
+  //  <BrowserRouter>
+  //    <Routes>
+  //      <Route path="/" element={<App />}>
+  //        <Route path="/" element={<Navigate to="home" />} />
+  //        <Route path="menu" element={<Menu />} />
+  //        <Route path="home" element={<Home />} />
+  //      </Route>
+  //    </Routes>
+  //  </BrowserRouter>
+  //</React.StrictMode>
   <React.StrictMode>
     <App />
   </React.StrictMode>

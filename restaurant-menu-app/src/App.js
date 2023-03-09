@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import Menu from "./components/Menu";
 function App() {
+  const [items] = useState([
+    { title: "Split Pea Soup", price: 20, description: "two peas and a pod" },
+    { title: "Orange Creamsicle", price: 90, description: "orange peely" },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Navbar />
+      <Menu Items={items} />
     </div>
   );
 }
