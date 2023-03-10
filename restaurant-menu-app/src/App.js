@@ -45,6 +45,11 @@ function App() {
     <div className="App">
       <Navbar />
       <Menu className="bg-primary" Items={items} />
+      <div className="p-5">
+        <hr className="hr hr-blurry" />
+        <hr className="hr hr-blurry" />
+        <hr className="hr hr-blurry" />
+      </div>
       <Footer />
     </div>
   );

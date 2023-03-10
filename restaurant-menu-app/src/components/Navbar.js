@@ -25,6 +25,8 @@ export default function Navbar() {
   );
 }
 
+
+
 // <ul className="nav navbar-nav">
 // <li>
 //   <Link to={"home"}>Home</Link>
