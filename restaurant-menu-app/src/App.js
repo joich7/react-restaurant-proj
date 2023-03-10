@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 function App() {
   // Store the items in a state variable.
@@ -44,7 +45,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Menu className="bg-primary" Items={items} />
-     
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,7 @@ export default function Menu({ Items }) {
   return (
     <div className="container ">
       <div className="p-5">
-        <h1>Brunch menu</h1>
+        <h1>Brunch Menu</h1>
         <hr className="hr hr-blurry" />
         <hr className="hr hr-blurry" />
         <hr className="hr hr-blurry" />
