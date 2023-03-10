@@ -1,20 +1,54 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Outlet } from "react-router-dom";
-import { useState } from "react";
+//import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
+import axios from "axios";
+
 function App() {
-  const [items] = useState([
-    { title: "Split Pea Soup", price: 20, description: "two peas and a pod" },
-    { title: "Orange Creamsicle", price: 90, description: "orange peely" },
-  ]);
+  // Store the items in a state variable.
+  // We are passing an empty array as the default value.
+  let [items, setItems] = useState([""]);
+  const BASE_URL = "https://www.jsonkeeper.com";
+  //const API_KEY = "";
+
+  useEffect(() => {
+    //let zip = selector("zipBox").value;
+    //let zipcode = zip +",us";
+    let options = {
+      baseURL: BASE_URL,
+      params: {
+        //zip: zipcode,
+        //appid: API_KEY,
+      },
+    };
+
+    axios
+      .get("/b/MDXW", options)
+      .then(function (response) {
+        console.log(response);
+        setItems(response.data.filter((food) => food.category === "Breakfast"));
+        console.log("success");
+      })
+      .catch(function (error) {
+        console.log(error);
+        console.log("it failed");
+        alert("area code invalid");
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
 
   return (
-    <div className="App container">
+    <div className="App">
       <Navbar />
-      <Menu Items={items} />
+      <Menu className="bg-primary" Items={items} />
+     
     </div>
   );
 }
 
 export default App;
+
+//title.replaceAll(" ", "")
